@@ -22,14 +22,17 @@ void contadorTimer0(void) //Creamos una funcion para nuestro Timer_0
    if(contadorDoscientos == 2) //Si nuestro contador doscientos es igual a 2
    {
       contador1++; //Nuestro contador 1 se aumenta en 1
+      contadorDoscientos = 0;
    }
    if(contadorQuinientos == 5) //Si nuestro contador quinientos es igual a 5
    {
       contador2++; //Nuestro contador 2 se aumenta en 1
+      contadorQuinientos = 0;
    }
    if(contadorSegundo == 10) //Si nuestro contador doscientos es igual a 10
    {
       contador3++; //Nuestro contador 3 se aumenta en 1
+      contadorSegundo = 0;
    }
    if(contador1 >= 10) //Si nuestro contador1 es mayor o igual a 10
    {
@@ -43,6 +46,8 @@ void contadorTimer0(void) //Creamos una funcion para nuestro Timer_0
    {
       contador3=0; //Nuestro contador 1 toma se reinicia y toma el valor de 0
    }
+   set_timer0(8); //Aplicamos calculos y empleamos el prescaler de 8
+   
 }
 void main(void) //Programa principal
 {
@@ -58,6 +63,6 @@ void main(void) //Programa principal
    {
       output_b(numeros[contador1]); //Sacamos el valor de nuestro contador 1 a traves de enuestro puerto B
       output_c(numeros[contador2]); //Sacamos el valor de nuestro contador 2 a traves de enuestro puerto C
-      output_d(numeros[contador3]); //Sacamos el valor de nuestro contador 3 a traves de enuestro puerto D
+      output_d(numeros[contador3]); //Sacamos el valor de nuestro contador 3 a traves de enuestro puerto D 
    }
 }
